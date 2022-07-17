@@ -27,47 +27,26 @@
 
 ## Double check correct lines have been removed  ##
 
-Orthostatic_Tilt_Raw$Subject.ID
-Orthostatic_Tilt_Change$Subject.ID
-###
+    New_File_name$##Colum_Header_Name##
 
-length(Orthostatic_Tilt_Raw$Subject.ID)
-length(Orthostatic_Tilt_Change$Subject.ID)
-###
+    length(New_File_name$##Colum_Header_Name##
 
-#######################
-### Stratify by sex ###
-#######################
+## Stratify by a variable. Example: Age ##
 
-##Males##
-Male_Orthostatic_Tilt_Raw<-Orthostatic_Tilt_Raw[!(Orthostatic_Tilt_Raw$Sex=="1"),] # remove Females from data frame #
-Male_Orthostatic_Tilt_Change<-Orthostatic_Tilt_Change[!(Orthostatic_Tilt_Change$Sex=="1"),] # remove Females from data frame #
-###
-view(Male_Orthostatic_Tilt_Raw)
-view(Male_Orthostatic_Tilt_Change)
-###
-sum(Male_Orthostatic_Tilt_Raw$Sex)
-sum(Male_Orthostatic_Tilt_Change$Sex)
-###
-Male_Orthostatic_Tilt_Raw$Subject.ID
-Male_Orthostatic_Tilt_Change$Subject.ID
-###
-length(Male_Orthostatic_Tilt_Raw$Subject.ID)
-length(Male_Orthostatic_Tilt_Change$Subject.ID)
 
-##Females##
-Female_Orthostatic_Tilt_Raw<-Orthostatic_Tilt_Raw[!(Orthostatic_Tilt_Raw$Sex=="0"),] # remove FeFeFemale's from data frame #
-Female_Orthostatic_Tilt_Change<-Orthostatic_Tilt_Change[!(Orthostatic_Tilt_Change$Sex=="0"),] # remove FeFeFemale's from data frame #
-###
-view(Female_Orthostatic_Tilt_Raw)
-view(Female_Orthostatic_Tilt_Change)
-###
-sum(Female_Orthostatic_Tilt_Raw$Sex)
-sum(Female_Orthostatic_Tilt_Change$Sex)
-###
-Female_Orthostatic_Tilt_Raw$Subject.ID
-Female_Orthostatic_Tilt_Change$Subject.ID
-###
-length(Female_Orthostatic_Tilt_Raw$Subject.ID)
-length(Female_Orthostatic_Tilt_Change$Subject.ID)
+    #Young adults##
+    
+    New_File_name_Young_adults<-New_File_name[!(New_File_name$Age=="1"),] # remove older adults from data frame #
+
+    view(New_File_name_Young_adults)
+
+    length(New_File_name_Young_adults$Age)
+
+    #Older Adults##
+    
+    New_File_name_Older_adults<-New_File_name[!(New_File_name$Age=="0"),] # remove younger adults from data frame #
+
+    view(New_File_name_Older_adults)
+
+    length(New_File_name_Older_adults$Age)
 
